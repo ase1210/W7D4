@@ -5,5 +5,3 @@ export const fetchAllPokemon = () => (
     dataType: 'json'
   })
 );
-
-window.fetchAllPokemon = fetchAllPokemon;
