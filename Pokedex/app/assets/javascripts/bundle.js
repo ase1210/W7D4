@@ -377,7 +377,7 @@ var PokemonItem = function PokemonItem(_ref) {
   var poke = _ref.poke,
       idx = _ref.idx;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/pokemon/:pokeId"
+    to: "/pokemon/".concat(poke.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, idx + 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: poke.image_url
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, poke.name)));
