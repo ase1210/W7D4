@@ -7,15 +7,24 @@ class PokemonDetail extends React.Component {
     this.props.requestPoke(this.props.match.params.pokeId)
   }
 
+  componentDidUpdate(oldProps) {
+    if (this.props.match.params.pokeId !== oldProps.match.params.pokeId) {
+      this.props.requestPoke(this.props.match.params.pokeId)
+    }
+  }
+
   render () {
+    if (!this.props.poke) {
+      return null
+    }
     return (
       <ul>
-        <li><img src={poke.image_url} /></li>
-        <li>{poke.name}</li>
-        <li>Type: {poke.type}</li>
-        <li>Attack {poke.attack}</li>
-        <li>Defense: {poke.defense}</li>
-        <li>Moves: {poke.moves}</li>
+        <img src={this.props.poke.image_url} />
+        <li>{this.props.poke.name}</li>
+        <li>Type: {this.props.poke.poke_type}</li>
+        <li>Attack {this.props.poke.attack}</li>
+        <li>Defense: {this.props.poke.defense}</li>
+        <li>Moves: {this.props.poke.moves}</li>
       </ul>
     )
   };
